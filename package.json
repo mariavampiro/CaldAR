@@ -1,11 +1,27 @@
 {
   "name": "caldar",
   "version": "1.0.0",
-  "description": "",
+  "description": "grupo-t2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariavampiro/CaldAR.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mariavampiro/CaldAR/issues"
+  },
+  "homepage": "https://github.com/mariavampiro/CaldAR#readme"
 }
