@@ -7,6 +7,9 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+// Customers API location
+app.use('/customers', require('./src/controllers/customers'));
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
