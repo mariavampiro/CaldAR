@@ -18,3 +18,11 @@ Request must be made by URL query params
 * Get customers by type url: http://localhost:3000/customers?type='business/particular'
 Note: filters cannot be combined. http://localhost:3000/customers?id=2&type='particular' will return an error  
 * Delete customer url: http://localhost:3000/customers?id=#
+
+### Technicians
+| Method | Endpoint | Description
+|---|---|---|
+|GET| /technicians | Gets all technicians from DB |
+|GET| /technicians?type=id | Gets all tecnicians that includes type id |
+|GET| /technicians/:id | Get technician by id |
+|DELETE| /technicians/:id | Delete technician by id |
