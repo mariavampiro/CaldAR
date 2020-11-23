@@ -5,7 +5,10 @@ const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
-});
+}); 
+
+// Buildings API location
+app.use('/buildings', require('./src/controllers/buildings'));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
