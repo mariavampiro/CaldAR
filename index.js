@@ -10,6 +10,9 @@ app.get("/", (req, res) => {
 // Buildings API location
 app.use('/buildings', require('./src/controllers/buildings'));
 
+// Customers API location
+app.use('/customers', require('./src/controllers/customers'));
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
