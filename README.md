@@ -34,3 +34,12 @@ Note: filters cannot be combined. http://localhost:3000/customers?id=2&type='par
 |GET| /appointments?boiler=id&building=id | Gets all appointments by boiler or building id |
 |GET| /appointments/:id | Get appointment by id |
 |DELETE| /appointments/:id | Delete appointment by id |
+
+### Boilers
+| Method | Endpoint | Description
+|---|---|---|
+|GET| /boilers | Gets all boiles from DB |
+|GET| /boilers?typeId=id&warehouse=id | Filter all boilers by boiler typeId and warehouse_id |
+|GET| /boilers/:id | Get boiler by id |
+|DELETE| /boilers/:id | Delete boiler by id |
+

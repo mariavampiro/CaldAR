@@ -19,6 +19,9 @@ app.use('/technicians', require('./src/controllers/Technicians'));
 // Technicians API location
 app.use('/appointments', require('./src/controllers/Appointments'));
 
+// Boilers API location
+app.use('/boilers', require('./src/controllers/boilers'));
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
