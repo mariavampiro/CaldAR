@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "typeId": 24,
+    "status": "available",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$25.09",
+    "hour_eventual_cost": "$49.94",
+    "warehouse_id": 52
+  },
+  {
+    "id": 2,
+    "typeId": 23,
+    "status": "available",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$47.49",
+    "hour_eventual_cost": "$0.38",
+    "warehouse_id": 86
+  },
+  {
+    "id": 3,
+    "typeId": 29,
+    "status": "available",
+    "maintaince_rate": "quarterly",
+    "hour_maintaince_cost": "$31.69",
+    "hour_eventual_cost": "$14.58",
+    "warehouse_id": 71
+  },
+  {
+    "id": 4,
+    "typeId": 100,
+    "status": "installed",
+    "maintaince_rate": "quarterly",
+    "hour_maintaince_cost": "$38.72",
+    "hour_eventual_cost": "$44.72",
+    "warehouse_id": 41
+  },
+  {
+    "id": 5,
+    "typeId": 79,
+    "status": "available",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$6.76",
+    "hour_eventual_cost": "$34.69",
+    "warehouse_id": 19
+  },
+  {
+    "id": 6,
+    "typeId": 87,
+    "status": "available",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$36.25",
+    "hour_eventual_cost": "$39.02",
+    "warehouse_id": 66
+  },
+  {
+    "id": 7,
+    "typeId": 33,
+    "status": "available",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$32.87",
+    "hour_eventual_cost": "$9.08",
+    "warehouse_id": 83
+  },
+  {
+    "id": 8,
+    "typeId": 92,
+    "status": "installed",
+    "maintaince_rate": "quarterly",
+    "hour_maintaince_cost": "$12.90",
+    "hour_eventual_cost": "$23.13",
+    "warehouse_id": 94
+  },
+  {
+    "id": 9,
+    "typeId": 59,
+    "status": "available",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$10.73",
+    "hour_eventual_cost": "$38.03",
+    "warehouse_id": 41
+  },
+  {
+    "id": 10,
+    "typeId": 57,
+    "status": "prearranged",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$33.19",
+    "hour_eventual_cost": "$3.52",
+    "warehouse_id": 60
+  },
+  {
+    "id": 11,
+    "typeId": 89,
+    "status": "prearranged",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$13.14",
+    "hour_eventual_cost": "$7.66",
+    "warehouse_id": 99
+  },
+  {
+    "id": 12,
+    "typeId": 78,
+    "status": "installed",
+    "maintaince_rate": "quarterly",
+    "hour_maintaince_cost": "$46.72",
+    "hour_eventual_cost": "$5.46",
+    "warehouse_id": 35
+  },
+  {
+    "id": 13,
+    "typeId": 98,
+    "status": "prearranged",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$24.93",
+    "hour_eventual_cost": "$46.84",
+    "warehouse_id": 33
+  },
+  {
+    "id": 14,
+    "typeId": 45,
+    "status": "available",
+    "maintaince_rate": "quarterly",
+    "hour_maintaince_cost": "$24.93",
+    "hour_eventual_cost": "$3.75",
+    "warehouse_id": 11
+  },
+  {
+    "id": 15,
+    "typeId": 98,
+    "status": "available",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$27.85",
+    "hour_eventual_cost": "$48.75",
+    "warehouse_id": 46
+  },
+  {
+    "id": 16,
+    "typeId": 83,
+    "status": "prearranged",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$12.15",
+    "hour_eventual_cost": "$9.11",
+    "warehouse_id": 1
+  },
+  {
+    "id": 17,
+    "typeId": 81,
+    "status": "available",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$13.18",
+    "hour_eventual_cost": "$1.84",
+    "warehouse_id": 45
+  },
+  {
+    "id": 18,
+    "typeId": 4,
+    "status": "installed",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$39.05",
+    "hour_eventual_cost": "$40.33",
+    "warehouse_id": 83
+  },
+  {
+    "id": 19,
+    "typeId": 23,
+    "status": "installed",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$47.36",
+    "hour_eventual_cost": "$44.30",
+    "warehouse_id": 40
+  },
+  {
+    "id": 20,
+    "typeId": 62,
+    "status": "available",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$49.56",
+    "hour_eventual_cost": "$28.79",
+    "warehouse_id": 10
+  },
+  {
+    "id": 21,
+    "typeId": 30,
+    "status": "installed",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$23.11",
+    "hour_eventual_cost": "$28.02",
+    "warehouse_id": 5
+  },
+  {
+    "id": 22,
+    "typeId": 9,
+    "status": "available",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$1.96",
+    "hour_eventual_cost": "$9.94",
+    "warehouse_id": 89
+  },
+  {
+    "id": 23,
+    "typeId": 55,
+    "status": "prearranged",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$19.17",
+    "hour_eventual_cost": "$20.43",
+    "warehouse_id": 65
+  },
+  {
+    "id": 24,
+    "typeId": 96,
+    "status": "installed",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$14.89",
+    "hour_eventual_cost": "$20.09",
+    "warehouse_id": 40
+  },
+  {
+    "id": 25,
+    "typeId": 35,
+    "status": "available",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$9.52",
+    "hour_eventual_cost": "$36.40",
+    "warehouse_id": 45
+  },
+  {
+    "id": 26,
+    "typeId": 62,
+    "status": "available",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$45.28",
+    "hour_eventual_cost": "$13.08",
+    "warehouse_id": 80
+  },
+  {
+    "id": 27,
+    "typeId": 7,
+    "status": "available",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$4.87",
+    "hour_eventual_cost": "$16.66",
+    "warehouse_id": 78
+  },
+  {
+    "id": 28,
+    "typeId": 26,
+    "status": "installed",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$44.66",
+    "hour_eventual_cost": "$47.09",
+    "warehouse_id": 37
+  },
+  {
+    "id": 29,
+    "typeId": 26,
+    "status": "installed",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$46.95",
+    "hour_eventual_cost": "$40.11",
+    "warehouse_id": 56
+  },
+  {
+    "id": 30,
+    "typeId": 64,
+    "status": "prearranged",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$30.66",
+    "hour_eventual_cost": "$38.91",
+    "warehouse_id": 74
+  },
+  {
+    "id": 31,
+    "typeId": 43,
+    "status": "available",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$29.16",
+    "hour_eventual_cost": "$48.93",
+    "warehouse_id": 61
+  },
+  {
+    "id": 32,
+    "typeId": 63,
+    "status": "prearranged",
+    "maintaince_rate": "quarterly",
+    "hour_maintaince_cost": "$10.61",
+    "hour_eventual_cost": "$47.99",
+    "warehouse_id": 86
+  },
+  {
+    "id": 33,
+    "typeId": 66,
+    "status": "available",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$30.61",
+    "hour_eventual_cost": "$33.29",
+    "warehouse_id": 72
+  },
+  {
+    "id": 34,
+    "typeId": 17,
+    "status": "prearranged",
+    "maintaince_rate": "quarterly",
+    "hour_maintaince_cost": "$29.41",
+    "hour_eventual_cost": "$22.61",
+    "warehouse_id": 83
+  },
+  {
+    "id": 35,
+    "typeId": 6,
+    "status": "prearranged",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$47.73",
+    "hour_eventual_cost": "$36.15",
+    "warehouse_id": 67
+  },
+  {
+    "id": 36,
+    "typeId": 29,
+    "status": "available",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$23.69",
+    "hour_eventual_cost": "$42.09",
+    "warehouse_id": 12
+  },
+  {
+    "id": 37,
+    "typeId": 26,
+    "status": "installed",
+    "maintaince_rate": "quarterly",
+    "hour_maintaince_cost": "$3.91",
+    "hour_eventual_cost": "$33.98",
+    "warehouse_id": 26
+  },
+  {
+    "id": 38,
+    "typeId": 45,
+    "status": "prearranged",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$16.10",
+    "hour_eventual_cost": "$14.76",
+    "warehouse_id": 88
+  },
+  {
+    "id": 39,
+    "typeId": 15,
+    "status": "available",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$41.75",
+    "hour_eventual_cost": "$4.37",
+    "warehouse_id": 75
+  },
+  {
+    "id": 40,
+    "typeId": 65,
+    "status": "available",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$28.61",
+    "hour_eventual_cost": "$22.40",
+    "warehouse_id": 26
+  },
+  {
+    "id": 41,
+    "typeId": 16,
+    "status": "prearranged",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$27.83",
+    "hour_eventual_cost": "$28.70",
+    "warehouse_id": 78
+  },
+  {
+    "id": 42,
+    "typeId": 32,
+    "status": "prearranged",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$4.81",
+    "hour_eventual_cost": "$1.43",
+    "warehouse_id": 4
+  },
+  {
+    "id": 43,
+    "typeId": 12,
+    "status": "prearranged",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$44.20",
+    "hour_eventual_cost": "$35.21",
+    "warehouse_id": 56
+  },
+  {
+    "id": 44,
+    "typeId": 32,
+    "status": "installed",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$2.78",
+    "hour_eventual_cost": "$16.63",
+    "warehouse_id": 1
+  },
+  {
+    "id": 45,
+    "typeId": 82,
+    "status": "available",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$17.89",
+    "hour_eventual_cost": "$22.27",
+    "warehouse_id": 18
+  },
+  {
+    "id": 46,
+    "typeId": 12,
+    "status": "installed",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$2.56",
+    "hour_eventual_cost": "$18.46",
+    "warehouse_id": 84
+  },
+  {
+    "id": 47,
+    "typeId": 63,
+    "status": "prearranged",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$33.80",
+    "hour_eventual_cost": "$11.63",
+    "warehouse_id": 16
+  },
+  {
+    "id": 48,
+    "typeId": 33,
+    "status": "prearranged",
+    "maintaince_rate": "monthly",
+    "hour_maintaince_cost": "$9.79",
+    "hour_eventual_cost": "$0.05",
+    "warehouse_id": 7
+  },
+  {
+    "id": 49,
+    "typeId": 54,
+    "status": "prearranged",
+    "maintaince_rate": "yearly",
+    "hour_maintaince_cost": "$24.41",
+    "hour_eventual_cost": "$44.62",
+    "warehouse_id": 10
+  },
+  {
+    "id": 50,
+    "typeId": 71,
+    "status": "prearranged",
+    "maintaince_rate": "quarterly",
+    "hour_maintaince_cost": "$10.49",
+    "hour_eventual_cost": "$32.67",
+    "warehouse_id": 24
+  }
+]
