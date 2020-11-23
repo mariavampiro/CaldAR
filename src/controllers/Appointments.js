@@ -1,7 +1,7 @@
 const fs = require("fs");
 const express = require("express");
 const router = express.Router();
-const appointments = require("../data/Appointments.json");
+const appointments = require("../data/appointments.json");
 
 // Get all technicians
 router.get("/", (req, res) => {
@@ -39,7 +39,7 @@ router.delete("/:id", (req, res) => {
   );
 
   const appointmentsJSON = JSON.stringify(filteredAppointments);
-  fs.writeFile("./src/data/Appointments.json", appointmentsJSON, (err) => {
+  fs.writeFile("./src/data/appointments.json", appointmentsJSON, (err) => {
     if (err) return res.status(500).send("Error in saving changes.");
 
     return res.sendStatus(204);
