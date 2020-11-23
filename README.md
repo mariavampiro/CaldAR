@@ -26,3 +26,11 @@ Note: filters cannot be combined. http://localhost:3000/customers?id=2&type='par
 |GET| /technicians?type=id | Gets all tecnicians that includes type id |
 |GET| /technicians/:id | Get technician by id |
 |DELETE| /technicians/:id | Delete technician by id |
+
+### Appointments
+| Method | Endpoint | Description
+|---|---|---|
+|GET| /appointments | Gets all appointments from DB |
+|GET| /appointments?boiler=id&building=id | Gets all appointments by boiler or building id |
+|GET| /appointments/:id | Get appointment by id |
+|DELETE| /appointments/:id | Delete appointment by id |
