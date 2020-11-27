@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "npm run load-env && nodemon index.js",
+    "load-env": "node -r dotenv/config . dotenv_config_path=./.env",
+    "start": "npm run load-env && node index.js"
   },
   "author": "",
   "license": "ISC",
