@@ -1,23 +1,28 @@
 # CaldAR
-
-grupo-t2
+A trainee backend project for Radium Rocket.
 
 ## Development
-Se agrego `nodemon` para el desarrollo. Para usarlo, ejecutar `npm run dev`.
+The command `npm run dev` runs [nodemon](https://www.npmjs.com/package/nodemon).
 
+## Endpoints
 ### Buildings API
-Request must be made by URL query params  
-* Get all buildings url: http://localhost:3000/buildings
-* Get customers by ID url: http://localhost:3000/buildings?id=# (example: http://localhost:3000/buildings?id=3 returns building with id=3 or an error)
-* Delete building url: http://localhost:3000/buildings?id=#
-  
+Request must be made by URL query params.
+| Method | Endpoint | Description
+|---|---|---|
+| GET | /buildings | Get all buildings |
+| GET | /buildings?id=# | Get building by ID |
+| DELETE | /buildings?id=# | Delete building by ID |
+
+
 ### Customers API
 Request must be made by URL query params  
-* Get all customers url: http://localhost:3000/customers
-* Get customers by ID url: http://localhost:3000/customers?id=# (example: http://localhost:3000/customers?id=3 returns customer with id=3 or an error)
-* Get customers by type url: http://localhost:3000/customers?type='business/particular'
-Note: filters cannot be combined. http://localhost:3000/customers?id=2&type='particular' will return an error  
-* Delete customer url: http://localhost:3000/customers?id=#
+| Method | Endpoint | Description
+|---|---|---|
+| GET | /customers | Get all customers |
+| GET | /customers?id=# | Get customer by ID, if not found returns an error |
+| GET | /customers?type='business/particular' | Get customers by type |
+| DELETE | /customers?id=# | Delete customer by ID |
+**Note**: filters cannot be combined. `http://localhost:3000/customers?id=2&type='particular'` will return an error.
 
 ### Technicians
 | Method | Endpoint | Description
@@ -42,4 +47,3 @@ Note: filters cannot be combined. http://localhost:3000/customers?id=2&type='par
 |GET| /boilers?typeId=id&warehouse=id | Filter all boilers by boiler typeId and warehouse_id |
 |GET| /boilers/:id | Get boiler by id |
 |DELETE| /boilers/:id | Delete boiler by id |
-
