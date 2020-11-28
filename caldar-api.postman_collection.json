@@ -1,0 +1,10 @@
+{
+	"info": {
+		"_postman_id": "5520f1e3-fbcf-472b-8816-28ad07f2de18",
+		"name": "caldar-api",
+		"description": "Documentation of CaldAR API REST.\r\nHere you'll find all available requests for the CaldAR app API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [],
+	"protocolProfileBehavior": {}
+}
