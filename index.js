@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 const app = express();
 
@@ -7,10 +6,8 @@ const db = require("./src/models");
 
 const port = process.env.PORT || 3000;
 
-// Endpoint Definition
 app.use(routes);
 
-// DB Connection
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,

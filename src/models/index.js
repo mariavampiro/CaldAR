@@ -7,9 +7,9 @@ const techniciansSchemas = require("./technicians")(mongoose);
 
 module.exports = {
   mongoose: mongoose,
-  // Atlas service URL
+
   url: process.env.DB_CONNECTION_URL,
-  // Schemas
+
   appointments: appointmentsSchemas,
   boilers: boilersSchemas,
   buildings: buildingsSchemas,

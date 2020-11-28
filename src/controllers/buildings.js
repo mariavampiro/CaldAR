@@ -1,44 +1,52 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const buildings = require('../data/buildings.json');
-const fs = require('fs');
+const buildings = require("../data/buildings.json");
+const fs = require("fs");
 
-// Get buildings (by id)
-router.get('/', (req, res) => {
-  //console.log('id: '+req.query.id);
+router.get("/", (req, res) => {
   if (req.query.id === undefined) {
     res.send(buildings);
   } else {
-    const idFound = buildings.some(building => building.id === parseInt(req.query.id));
+    const idFound = buildings.some(
+      (building) => building.id === parseInt(req.query.id)
+    );
     if (idFound) {
-      res.json(buildings.filter(building => building.id === parseInt(req.query.id)));
+      res.json(
+        buildings.filter((building) => building.id === parseInt(req.query.id))
+      );
     } else {
-      res.status(400).json({ msg: `No building with the id of ${req.query.id}`});
+      res
+        .status(400)
+        .json({ msg: `No building with the id of ${req.query.id}` });
     }
   }
 });
 
-// Delete building (by id)
-router.delete('/', (req, res) => {
-  //console.log('id: '+req.query.id);
-  const idFound = buildings.some(building => building.id === parseInt(req.query.id));
+router.delete("/", (req, res) => {
+  const idFound = buildings.some(
+    (building) => building.id === parseInt(req.query.id)
+  );
+
   if (idFound) {
-    let buildingsDeleted = buildings.filter(building => building.id !== parseInt(req.query.id));
+    let buildingsDeleted = buildings.filter(
+      (building) => building.id !== parseInt(req.query.id)
+    );
     res.json({
-      msg: 'Building successfully deleted',
-      buildings: buildings.filter(building => building.id !== parseInt(req.query.id))
+      msg: "Building successfully deleted",
+      buildings: buildings.filter(
+        (building) => building.id !== parseInt(req.query.id)
+      ),
     });
-    //console.log(buildingsDeleted);
     const jsonString = JSON.stringify(buildingsDeleted);
-    fs.writeFile('./src/data/buildings.json', jsonString, err => {
+    fs.writeFile("./src/data/buildings.json", jsonString, (err) => {
       if (err) {
-        console.log('Error writing file', err)
+        console.log("Error writing file", err);
       } else {
-        console.log('Successfully wrote file')
+        console.log("Successfully wrote file");
       }
-    })
+    });
   } else {
-    res.status(400).json({ msg: `No building with the id of ${req.query.id}`});
+    res.status(400).json({ msg: `No building with the id of ${req.query.id}` });
   }
 });
 

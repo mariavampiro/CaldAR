@@ -3,7 +3,7 @@ module.exports = (mongoose) =>
     "buildings", // Collection name
     mongoose.Schema(
       {
-        // Schema
+        // TODO Schema
         // key: type
       },
       { timestamps: true }
