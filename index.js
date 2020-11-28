@@ -1,18 +1,27 @@
 const express = require("express");
 const app = express();
 
-const port = process.env.PORT || 5000;
+const routes = require("./src/routes");
+const db = require("./src/models");
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+const port = process.env.PORT || 3000;
 
-app.use('/buildings', require('./src/controllers/buildings'));
-app.use('/customers', require('./src/controllers/customers'));
-app.use('/technicians', require('./src/controllers/technicians'));
-app.use('/appointments', require('./src/controllers/appointments'));
-app.use('/boilers', require('./src/controllers/boilers'));
+app.use(routes);
 
-app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
-});
+db.mongoose
+  .connect(db.url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connection to DB successful!");
+
+    // Initiate Server
+    app.listen(port, () => {
+      console.log(`App listening at http://localhost:${port}`);
+    });
+  })
+  .catch((err) => {
+    console.error("Cannot connect to DB!", err);
+    process.exit();
+  });

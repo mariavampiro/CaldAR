@@ -1,0 +1,5 @@
+const boilersController = require("../controllers/boilers");
+const express = require("express");
+const router = express.Router();
+
+module.exports = router;
