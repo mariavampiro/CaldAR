@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const boiler_types = require("../data/boiler_types.json");
+const boiler_types = require("../data/boiler-types.json");
 const fs = require("fs");
 
 // Get boiler_types (by typeId or description)
@@ -72,7 +72,7 @@ router.delete("/", (req, res) => {
     });
     //console.log(boiler_typesDeleted);
     const jsonString = JSON.stringify(boiler_typesDeleted);
-    fs.writeFile("./src/data/boiler_types.json", jsonString, (err) => {
+    fs.writeFile("./src/data/boiler-types.json", jsonString, (err) => {
       if (err) {
         console.log("Error", err);
       } else {
