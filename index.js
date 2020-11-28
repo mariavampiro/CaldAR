@@ -9,8 +9,8 @@ app.get("/", (req, res) => {
 
 app.use('/buildings', require('./src/controllers/buildings'));
 app.use('/customers', require('./src/controllers/customers'));
-app.use('/technicians', require('./src/controllers/Technicians'));
-app.use('/appointments', require('./src/controllers/Appointments'));
+app.use('/technicians', require('./src/controllers/technicians'));
+app.use('/appointments', require('./src/controllers/appointments'));
 app.use('/boilers', require('./src/controllers/boilers'));
 
 app.listen(port, () => {
