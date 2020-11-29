@@ -31,7 +31,6 @@ exports.findOne = (req, res) => {
 };
 
 exports.create = (req, res) => {
-  console.log (req.body);
   if (!req.body.id || !req.body.customerType || !req.body.email || !req.body.buildingsId || !req.body.fiscalAddress) {
     res.status(400).send ({message: "All customers field must have data!"});
     return;
