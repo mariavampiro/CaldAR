@@ -6,16 +6,14 @@ The command `npm run dev` runs [nodemon](https://www.npmjs.com/package/nodemon).
 
 ## Endpoints
 ### Buildings API
-Request must be made by URL query params.
 | Method | Endpoint | Description
 |---|---|---|
 | GET | /buildings | Get all buildings |
 | GET | /buildings/id | Get building by id |
-| DELETE | /buildings?id=# | Delete building by ID |
+| POST | /buildings | Add building (all fields required) |
 
 
 ### Customers API
-Request must be made by URL query params  
 | Method | Endpoint | Description
 |---|---|---|
 | GET | /customers | Get all customers |
