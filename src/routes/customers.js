@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/", customersController.findAll);
 
 //Retrieve customer by id
-//router.get("/:id", customersController.findOne);
+router.get("/:id", customersController.findOne);
 
 //Create a new customer
 //router.post("/", customersController.create);

@@ -13,6 +13,23 @@ exports.findAll = (req, res) => {
   });
 };
 
+exports.findOne = (req, res) => {
+  customers.findOne ({id: req.params.id})
+  .then (data => {
+    if (!data) {
+      return res.status(404).send({
+        message: `No customer with id ${req.params.id}`
+      })
+    }
+    res.send(data);
+  })
+  .catch (err => {
+    res.status(500).send({
+      message: err.message || "An error ocurred while retrieving customer."
+    });
+  });
+};
+
 // router.get("/", (req, res) => {
 //   if (req.query.id === undefined && req.query.type === undefined) {
 //     res.send(customers);
