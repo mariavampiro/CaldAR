@@ -32,7 +32,7 @@ exports.findOne = (req, res) => {
 
 exports.create = (req, res) => {
   if (!req.body.id || !req.body.customerType || !req.body.email || !req.body.buildingsId || !req.body.fiscalAddress) {
-    res.status(400).send ({message: "All customers field must have data!"});
+    res.status(400).send ({message: "All customers fields must have data!"});
     return;
   }
 
@@ -54,6 +54,35 @@ exports.create = (req, res) => {
         message: err.message || "An error ocurred while creating the customer."
       });
     });
+};
+
+exports.update = (req, res) => {
+  if (!req.body) {
+    return res.status(400).send({
+      message: "Data to update can not be empty!"
+    });
+  }
+
+  if (!req.body.id || !req.body.customerType || !req.body.email || !req.body.buildingsId || !req.body.fiscalAddress) {
+    res.status(400).send ({message: "To update the customer all fields must have data!"});
+    return;
+  }
+
+  const id = req.params.id;
+
+  customers.findOneAndUpdate({id}, req.body, { useFindAndModify: false })
+  .then(data => {
+    if (!data) {
+      return res.status(404).send({
+        message: `Cannot update customer with id ${id}. Customer with this id may not exist.`
+      });
+    } else res.send({ message: "Customer successfully updated."});
+  })
+  .catch(err => {
+    res.status(500).send({
+      message: err.message || "An error ocurred while updating customer."
+    });
+  });
 };
 
 // router.get("/", (req, res) => {
