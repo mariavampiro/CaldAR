@@ -27,9 +27,10 @@ Request must be made by URL query params
 ### Technicians
 | Method | Endpoint | Description
 |---|---|---|
-|GET| /technicians | Gets all technicians from DB |
-|GET| /technicians?type=id | Gets all tecnicians that includes type id |
+|GET| /technicians?type=id | Gets all technicians or filter by type ID |
+|POST| /technicians | Create new technician |
 |GET| /technicians/:id | Get technician by id |
+|PUT| /technicians/:id | Update technician by id |
 |DELETE| /technicians/:id | Delete technician by id |
 
 ### Appointments
