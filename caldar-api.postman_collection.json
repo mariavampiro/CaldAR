@@ -1,132 +1,214 @@
 {
-	"info": {
-		"_postman_id": "5520f1e3-fbcf-472b-8816-28ad07f2de18",
-		"name": "caldar-api",
-		"description": "Documentation of CaldAR API REST.\r\nHere you'll find all available requests for the CaldAR app API.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Customers - Get all",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/customers",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"customers"
-					]
-				},
-				"description": "Retrieves all customers"
-			},
-			"response": []
-		},
-		{
-			"name": "Customers - Get one",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/customers/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"customers",
-						"1"
-					]
-				},
-				"description": "Retrieves the customer with the selected id"
-			},
-			"response": []
-		},
-		{
-			"name": "Customers - Add",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"id\": 1,\r\n    \"customerType\": \"Construction company\",\r\n    \"email\": \"suppliers@ccr.com\",\r\n    \"buildingsId\": [1,3,7],\r\n    \"fiscalAddress\": \"2201 Mullholand Drive\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/customers",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"customers"
-					]
-				},
-				"description": "Adds a customer. All data fields must be included"
-			},
-			"response": []
-		},
-		{
-			"name": "Customers - Update one",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"id\": 1,\r\n    \"customerType\": \"Construction company\",\r\n    \"email\": \"suppliers@ccr.com\",\r\n    \"buildingsId\": [1,3,7],\r\n    \"fiscalAddress\": \"2057 Mullholand Drive\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/customers/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"customers",
-						"1"
-					]
-				},
-				"description": "Updates one the fields of the customer with the selected id.\r\nAll fields must have data to update the customer."
-			},
-			"response": []
-		},
-		{
-			"name": "Customers - Delete one",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/customers/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"customers",
-						"1"
-					]
-				},
-				"description": "Deletes customer with specified id."
-			},
-			"response": []
-		}
-	],
-	"protocolProfileBehavior": {}
+  "info": {
+    "_postman_id": "3b7c3240-3845-4373-88f4-b5536cf2ad04",
+    "name": "caldar-api",
+    "description": "Documentation of CaldAR API REST.\r\nHere you'll find all available requests for the CaldAR app API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Technicians",
+      "item": [
+        {
+          "name": "Get all technicians",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/technicians?type=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["technicians"],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "You can algo query by type.\r\nex: ?type=1"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Technician",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n        \"id\": 666,\r\n        \"first_name\": \"Menganito\",\r\n        \"last_name\": \"Sultanito\",\r\n        \"email\": \"ms@gmail.com\",\r\n        \"type_ids\": [1,2],\r\n        \"skills_id\": [2,4],\r\n        \"hour_rate\": 4.22,\r\n        \"daily_capacity\": 7\r\n      }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/technicians",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["technicians"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get technician by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/technicians/666",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["technicians", "666"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update technician by id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n        \"id\": 666,\r\n        \"first_name\": \"Menganito\",\r\n        \"last_name\": \"Sultanito\",\r\n        \"email\": \"ms@gmail.com\",\r\n        \"type_ids\": [1,2,3,4,5,6,7],\r\n        \"skills_id\": [2,4],\r\n        \"hour_rate\": 4.22,\r\n        \"daily_capacity\": 7\r\n      }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/technicians/666",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["technicians", "666"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete technician by id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/technicians/666",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["technicians", "666"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Customers - Get all",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/customers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["customers"]
+        },
+        "description": "Retrieves all customers"
+      },
+      "response": []
+    },
+    {
+      "name": "Customers - Get one",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/customers/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["customers", "1"]
+        },
+        "description": "Retrieves the customer with the selected id"
+      },
+      "response": []
+    },
+    {
+      "name": "Customers - Add",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 1,\r\n    \"customerType\": \"Construction company\",\r\n    \"email\": \"suppliers@ccr.com\",\r\n    \"buildingsId\": [1,3,7],\r\n    \"fiscalAddress\": \"2201 Mullholand Drive\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/customers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["customers"]
+        },
+        "description": "Adds a customer. All data fields must be included"
+      },
+      "response": []
+    },
+    {
+      "name": "Customers - Update one",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 1,\r\n    \"customerType\": \"Construction company\",\r\n    \"email\": \"suppliers@ccr.com\",\r\n    \"buildingsId\": [1,3,7],\r\n    \"fiscalAddress\": \"2057 Mullholand Drive\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/customers/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["customers", "1"]
+        },
+        "description": "Updates one the fields of the customer with the selected id.\r\nAll fields must have data to update the customer."
+      },
+      "response": []
+    },
+    {
+      "name": "Customers - Delete one",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/customers/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["customers", "1"]
+        },
+        "description": "Deletes customer with specified id."
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
 }
