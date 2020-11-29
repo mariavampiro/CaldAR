@@ -22,7 +22,7 @@ Request must be made by URL query params
 | GET | /customers/id | Get customer by id |
 | POST | /customers | Add customer (all fields required) |
 | PUT | /customers/id | Update customer with specified id |
-| DELETE | /customers?id=# | Delete customer by ID |
+| DELETE | /customers/id | Delete customer by id |
 
 ### Technicians
 | Method | Endpoint | Description
