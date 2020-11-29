@@ -35,9 +35,10 @@ Request must be made by URL query params
 ### Appointments
 | Method | Endpoint | Description
 |---|---|---|
-|GET| /appointments | Gets all appointments from DB |
-|GET| /appointments?boiler=id&building=id | Gets all appointments by boiler or building id |
+|GET| /appointments?boiler=id&building=id | Gets all appointments, able to filter by boiler or building id |
+|POST| /appointments | Create an appointments |
 |GET| /appointments/:id | Get appointment by id |
+|PUT| /appointments/:id | Update appointment by id |
 |DELETE| /appointments/:id | Delete appointment by id |
 
 ### Boilers
