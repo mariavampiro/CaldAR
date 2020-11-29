@@ -6,6 +6,7 @@ const db = require("./src/models");
 
 const port = process.env.PORT || 3000;
 
+app.use(express.json());
 app.use(routes);
 
 db.mongoose

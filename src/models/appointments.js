@@ -3,8 +3,11 @@ module.exports = (mongoose) =>
     "appointments", // Collection name
     mongoose.Schema(
       {
-        // TODO Schema
-        // key: type
+        id: Number,
+        buildingId: Number,
+        boilerId: Number,
+        start_timestamp: Date,
+        end_timestamp: Date,
       },
       { timestamps: true }
     )

@@ -1,48 +1,118 @@
-const Appointments = require("../models").appointments;
-const fs = require("fs");
-const appointments = require("../data/appointments.json");
-
-exports.create = (req,res) => {
-  
-}
+const Appointment = require("../models").appointments;
 
 exports.findAll = (req, res) => {
-  const boiler = +req.query.boiler;
-  const building = +req.query.building;
+  const boiler = +req.query.boiler || "";
+  const building = +req.query.building || "";
 
-  if (!boiler && !building) return res.json(appointments);
+  if (!boiler && !building)
+    return Appointment.find({})
+      .then((data) => res.send(data))
+      .catch((err) =>
+        res.status(500).send({ message: err.message || "Error in query db" })
+      );
 
-  return res.json(
-    appointments.filter(
-      (a) => a.buildingId === building || a.boilerId === boiler
-    )
-  );
+  return Appointment.find({
+    $or: [{ buildingId: building }, { boilerId: boiler }],
+  })
+    .then((data) => res.send(data))
+    .catch((err) =>
+      res.status(500).send({ message: err.message || "Error in query db" })
+    );
+};
+
+exports.create = (req, res) => {
+  const { id, buildingId, boilerId, start_timestamp, end_timestamp } = req.body;
+
+  if (!id || !buildingId || !boilerId || !start_timestamp || !end_timestamp)
+    return res.status(400).send({
+      message:
+        "Uncomplete id, buildingId, boilerId, start_timestamp, end_timestamp",
+    });
+
+  const appointment = new Appointment({
+    id,
+    buildingId,
+    boilerId,
+    start_timestamp,
+    end_timestamp,
+  });
+
+  appointment
+    .save(appointment)
+    .then((data) => {
+      res.status(201).send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Error in saving resource in DB.",
+      });
+    });
 };
 
 exports.findById = (req, res) => {
-  const id = +req.params.id;
-  const appointment = appointments.find((t) => t.id === id);
+  const id = +req.params.id || "";
 
-  if (!appointment) return res.sendStatus(404);
+  Appointment.findOne({ id })
+    .then((data) => {
+      if (!data)
+        return res
+          .status(404)
+          .send({ message: `Appouintment ${req.params.id} was not found.` });
 
-  return res.json(appointment);
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Error in saving resource in DB.",
+      });
+    });
+};
+
+exports.editById = (req, res) => {
+  const idAppointment = +req.params.id;
+
+  if (!idAppointment)
+    return res.status(400).send({ message: `Invalid Id ${req.params.id}` });
+
+  req.body = req.body || {};
+  const { id, buildingId, boilerId, start_timestamp, end_timestamp } = req.body;
+
+  if (!id || !buildingId || !boilerId || !start_timestamp || !end_timestamp)
+    return res.status(400).send({
+      message:
+        "Uncomplete id, buildingId, boilerId, start_timestamp, end_timestamp",
+    });
+
+  Appointment.findOneAndUpdate({ id: idAppointment }, req.body, {
+    useFindAndModify: false,
+  })
+    .then((data) => {
+      if (!data)
+        return res
+          .status(404)
+          .send({ message: `Appouintment ${req.params.id} was not found.` });
+
+      res.send({ message: `Appouintment ${req.params.id} was updated.` });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Error in saving resource in DB.",
+      });
+    });
 };
 
 exports.deleteById = (req, res) => {
   const id = +req.params.id;
-  const deletedAppointment = appointments.find((t) => t.id === id);
 
-  if (!deletedAppointment) return res.sendStatus(404);
+  if (!id) return res.status(400).send({ message: `Invalid Id ${id}` });
 
-  const filteredAppointments = appointments.filter(
-    (t) => t.id !== deletedAppointment.id
-  );
-
-  const appointmentsJSON = JSON.stringify(filteredAppointments);
-
-  fs.writeFile("./src/data/appointments.json", appointmentsJSON, (err) => {
-    if (err) return res.status(500).send("Error in saving changes.");
-
-    return res.sendStatus(204);
-  });
+  Appointment.findOneAndDelete({ id }, { useFindAndModify: false })
+    .then((data) => {
+      res.sendStatus(204);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Error in saving resource in DB.",
+      });
+    });
 };
