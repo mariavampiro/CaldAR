@@ -7,7 +7,7 @@ module.exports = (mongoose) =>
         customerType: String,
         email: String,
         buildingsId: [],
-        fiscalAddress: string,
+        fiscalAddress: String,
       },
       { timestamps: true }
     )
