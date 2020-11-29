@@ -30,6 +30,33 @@ exports.findOne = (req, res) => {
   });
 };
 
+exports.create = (req, res) => {
+  console.log (req.body);
+  if (!req.body.id || !req.body.customerType || !req.body.email || !req.body.buildingsId || !req.body.fiscalAddress) {
+    res.status(400).send ({message: "All customers field must have data!"});
+    return;
+  }
+
+  const customer = new customers ({
+    id: req.body.id,
+    customerType: req.body.customerType,
+    email: req.body.email,
+    buildingsId: req.body.buildingsId,
+    fiscalAddress: req.body.fiscalAddress,
+  });
+
+  customer
+    .save(customer)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || "An error ocurred while creating the customer."
+      });
+    });
+};
+
 // router.get("/", (req, res) => {
 //   if (req.query.id === undefined && req.query.type === undefined) {
 //     res.send(customers);

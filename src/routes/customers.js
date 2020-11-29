@@ -9,7 +9,7 @@ router.get("/", customersController.findAll);
 router.get("/:id", customersController.findOne);
 
 //Create a new customer
-//router.post("/", customersController.create);
+router.post("/", customersController.create);
 
 //Update a customer with id
 //router.put("/:id", customersController.update);
