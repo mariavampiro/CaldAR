@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/", buildingsController.findAll);
 
 //Retrieve building by id
-//router.get("/:id", buildingsController.findOne);
+router.get("/:id", buildingsController.findOne);
 
 //Create a new building
 //router.post("/", buildingsController.create);

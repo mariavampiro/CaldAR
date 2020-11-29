@@ -13,6 +13,23 @@ exports.findAll = (req, res) => {
   });
 };
 
+exports.findOne = (req, res) => {
+  buildings.findOne ({id: req.params.id})
+  .then (data => {
+    if (!data) {
+      return res.status(404).send({
+        message: `No building with id ${req.params.id}`
+      })
+    }
+    res.send(data);
+  })
+  .catch (err => {
+    res.status(500).send({
+      message: err.message || "An error ocurred while retrieving building."
+    });
+  });
+};
+
 // router.get("/", (req, res) => {
 //   if (req.query.id === undefined) {
 //     res.send(buildings);
