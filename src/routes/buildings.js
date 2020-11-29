@@ -9,7 +9,7 @@ router.get("/", buildingsController.findAll);
 router.get("/:id", buildingsController.findOne);
 
 //Create a new building
-//router.post("/", buildingsController.create);
+router.post("/", buildingsController.create);
 
 //Update a building with id
 //router.put("/:id", buildingsController.update);

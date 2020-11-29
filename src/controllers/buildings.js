@@ -30,6 +30,32 @@ exports.findOne = (req, res) => {
   });
 };
 
+exports.create = (req, res) => {
+  if (!req.body.id || !req.body.address || !req.body.boilersId || !req.body.fullName || !req.body.phone) {
+    res.status(400).send ({message: "All buildings fields must have data!"});
+    return;
+  }
+
+  const building = new buildings ({
+    id: req.body.id,
+    address: req.body.address,
+    boilersId: req.body.boilersId,
+    fullName: req.body.fullName,
+    phone: req.body.phone,
+  });
+
+  building
+    .save(building)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || "An error ocurred while creating the building."
+      });
+    });
+};
+
 // router.get("/", (req, res) => {
 //   if (req.query.id === undefined) {
 //     res.send(buildings);
