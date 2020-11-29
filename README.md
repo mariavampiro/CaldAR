@@ -21,9 +21,8 @@ Request must be made by URL query params
 | GET | /customers | Get all customers |
 | GET | /customers/id | Get customer by id |
 | POST | /customers | Add customer (all fields required) |
-| GET | /customers?type='business/particular' | Get customers by type |
+| PUT | /customers/id | Update customer with specified id |
 | DELETE | /customers?id=# | Delete customer by ID |
-**Note**: filters cannot be combined. `http://localhost:3000/customers?id=2&type='particular'` will return an error.
 
 ### Technicians
 | Method | Endpoint | Description
