@@ -2,7 +2,6 @@ const Technicians = require("../models").technicians;
 
 exports.findAll = (req, res) => {
   const type = +req.query.type || "";
-  console.log(type);
 
   if (!type)
     return Technicians.find({})
