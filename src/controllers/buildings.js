@@ -56,49 +56,31 @@ exports.create = (req, res) => {
     });
 };
 
-// router.get("/", (req, res) => {
-//   if (req.query.id === undefined) {
-//     res.send(buildings);
-//   } else {
-//     const idFound = buildings.some(
-//       (building) => building.id === parseInt(req.query.id)
-//     );
-//     if (idFound) {
-//       res.json(
-//         buildings.filter((building) => building.id === parseInt(req.query.id))
-//       );
-//     } else {
-//       res
-//         .status(400)
-//         .json({ msg: `No building with the id of ${req.query.id}` });
-//     }
-//   }
-// });
+exports.update = (req, res) => {
+  if (!req.body) {
+    return res.status(400).send({
+      message: "Data to update can not be empty!"
+    });
+  }
 
-// router.delete("/", (req, res) => {
-//   const idFound = buildings.some(
-//     (building) => building.id === parseInt(req.query.id)
-//   );
+  if (!req.body.id || !req.body.address || !req.body.boilersId || !req.body.fullName || !req.body.phone) {
+    res.status(400).send ({message: "To update the building all fields must have data!"});
+    return;
+  }
 
-//   if (idFound) {
-//     let buildingsDeleted = buildings.filter(
-//       (building) => building.id !== parseInt(req.query.id)
-//     );
-//     res.json({
-//       msg: "Building successfully deleted",
-//       buildings: buildings.filter(
-//         (building) => building.id !== parseInt(req.query.id)
-//       ),
-//     });
-//     const jsonString = JSON.stringify(buildingsDeleted);
-//     fs.writeFile("./src/data/buildings.json", jsonString, (err) => {
-//       if (err) {
-//         console.log("Error writing file", err);
-//       } else {
-//         console.log("Successfully wrote file");
-//       }
-//     });
-//   } else {
-//     res.status(400).json({ msg: `No building with the id of ${req.query.id}` });
-//   }
-// });
+  const id = req.params.id;
+
+  buildings.findOneAndUpdate({id}, req.body, { useFindAndModify: false })
+  .then(data => {
+    if (!data) {
+      return res.status(404).send({
+        message: `Cannot update building with id ${id}. Building with this id may not exist.`
+      });
+    } else res.send({ message: "Building successfully updated."});
+  })
+  .catch(err => {
+    res.status(500).send({
+      message: err.message || "An error ocurred while updating the building."
+    });
+  });
+};

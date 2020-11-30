@@ -12,7 +12,7 @@ router.get("/:id", buildingsController.findOne);
 router.post("/", buildingsController.create);
 
 //Update a building with id
-//router.put("/:id", buildingsController.update);
+router.put("/:id", buildingsController.update);
 
 //Delete a building with id
 //router.delete("/:id", buildingsController.delete);
