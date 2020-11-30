@@ -11,6 +11,7 @@ The command `npm run dev` runs [nodemon](https://www.npmjs.com/package/nodemon).
 | GET | /buildings | Get all buildings |
 | GET | /buildings/id | Get building by id |
 | POST | /buildings | Add building (all fields required) |
+| PUT | /buildings/id | Update building with specific id |
 
 
 ### Customers API
@@ -19,7 +20,7 @@ The command `npm run dev` runs [nodemon](https://www.npmjs.com/package/nodemon).
 | GET | /customers | Get all customers |
 | GET | /customers/id | Get customer by id |
 | POST | /customers | Add customer (all fields required) |
-| PUT | /customers/id | Update customer with specified id |
+| PUT | /customers/id | Update customer with specific id |
 | DELETE | /customers/id | Delete customer by id |
 
 ### Technicians
