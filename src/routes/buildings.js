@@ -15,6 +15,6 @@ router.post("/", buildingsController.create);
 router.put("/:id", buildingsController.update);
 
 //Delete a building with id
-//router.delete("/:id", buildingsController.delete);
+router.delete("/:id", buildingsController.delete);
 
 module.exports = router;

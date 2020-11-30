@@ -84,3 +84,20 @@ exports.update = (req, res) => {
     });
   });
 };
+
+exports.delete = (req, res) => {
+  const id = req.params.id;
+  buildings.findOneAndRemove ({id}, { useFindAndModify: false })
+    .then(data => {
+      if (!data) {
+        return res.status(404).send({
+          message: `Cannot delete building with id ${id}. Building with this id may not exist.`
+        });
+      } else res.send({ message: "building successfully deleted."});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || "An error ocurred while deleting the building."
+      });
+    });
+};
