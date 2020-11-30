@@ -12,7 +12,7 @@ The command `npm run dev` runs [nodemon](https://www.npmjs.com/package/nodemon).
 | GET | /buildings/id | Get building by id |
 | POST | /buildings | Add building (all fields required) |
 | PUT | /buildings/id | Update building with specific id |
-
+| DELETE | /buildings/id | Delete building by id |
 
 ### Customers API
 | Method | Endpoint | Description
