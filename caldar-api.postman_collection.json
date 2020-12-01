@@ -247,7 +247,107 @@
 				"description": "Deletes customer with specific id."
 			},
 			"response": []
-		}
+    },
+    {
+      "name": "Technicians - Get all",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/technicians?type=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["technicians"],
+          "query": [
+            {
+              "key": "type",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "You can also query by type.\r\nex: ?type=1"
+      },
+      "response": []
+    },
+    {
+      "name": "Technicians - Get one",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/technicians/666",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["technicians", "666"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Technicians - Add",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n        \"id\": 666,\r\n        \"first_name\": \"Menganito\",\r\n        \"last_name\": \"Sultanito\",\r\n        \"email\": \"ms@gmail.com\",\r\n        \"type_ids\": [1,2],\r\n        \"skills_id\": [2,4],\r\n        \"hour_rate\": 4.22,\r\n        \"daily_capacity\": 7\r\n      }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/technicians",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["technicians"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Technicians - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n        \"id\": 666,\r\n        \"first_name\": \"Menganito\",\r\n        \"last_name\": \"Sultanito\",\r\n        \"email\": \"ms@gmail.com\",\r\n        \"type_ids\": [1,2,3,4,5,6,7],\r\n        \"skills_id\": [2,4],\r\n        \"hour_rate\": 4.22,\r\n        \"daily_capacity\": 7\r\n      }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/technicians/666",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["technicians", "666"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Technicians - Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/technicians/666",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["technicians", "666"]
+        }
+      },
+      "response": []
+    }
 	],
 	"protocolProfileBehavior": {}
 }
