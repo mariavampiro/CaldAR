@@ -4,6 +4,7 @@ module.exports = (mongoose) =>
     mongoose.Schema(
       {
         typeId: Number,
+        stock: Number,
         description: String, 
       },
       { timestamps: true }
