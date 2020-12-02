@@ -4,9 +4,13 @@ module.exports = (mongoose) =>
     mongoose.Schema(
       {
         typeId: Number,
+        skillsId: [],
+        description: String,
         stock: Number,
-        description: String, 
       },
       { timestamps: true }
     )
   );
+
+
+
