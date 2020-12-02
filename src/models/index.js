@@ -4,6 +4,7 @@ const boilersSchemas = require("./boilers")(mongoose);
 const buildingsSchemas = require("./buildings")(mongoose);
 const customersSchemas = require("./customers")(mongoose);
 const techniciansSchemas = require("./technicians")(mongoose);
+const boilersTypesSchemas = require("./boilers-types")(mongoose);
 
 module.exports = {
   mongoose: mongoose,
@@ -15,4 +16,5 @@ module.exports = {
   buildings: buildingsSchemas,
   customers: customersSchemas,
   technicians: techniciansSchemas,
+  boilersTypes: boilersTypesSchemas,
 };

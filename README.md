@@ -48,3 +48,12 @@ The command `npm run dev` runs [nodemon](https://www.npmjs.com/package/nodemon).
 |GET| /boilers?typeId=id&warehouse=id | Filter all boilers by boiler typeId and warehouse_id |
 |GET| /boilers/:id | Get boiler by id |
 |DELETE| /boilers/:id | Delete boiler by id |
+
+### Boilers-types
+| Method | Endpoint | Description
+|---|---|---|
+| GET | /boilersTypes | Get all boilers-types |
+| GET | /boilersTypes/typeId | Get boilers-types by typeId |
+| POST | /boilersTypes | Add boilersType (all fields required) |
+| PUT | /boilersTypes/typeId | Update boilers-type with specific typeId |
+| DELETE | /boilersTypes/typeId | Delete building by typeId |
