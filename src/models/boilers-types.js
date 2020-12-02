@@ -1,6 +1,6 @@
 module.exports = (mongoose) =>
   mongoose.model(
-    "boiler-types", // Collection name
+    "boiler-types",
     mongoose.Schema(
       {
         typeId: Number,

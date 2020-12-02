@@ -1,6 +1,6 @@
 module.exports = (mongoose) =>
   mongoose.model(
-    "boilers", // Collection name
+    "boilers",
     mongoose.Schema(
       {
         id: Number,
