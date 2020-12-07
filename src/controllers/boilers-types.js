@@ -1,38 +1,51 @@
-const db = require("../models");
+const db = require('../models');
 const boilersTypes = db.boilersTypes;
 
 exports.findAll = (req, res) => {
-  boilersTypes.find({})
-    .then(data => {
+  boilersTypes
+    .find({})
+    .then((data) => {
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: err.message || "An error ocurred while retrieving boilers-types data."
+        message:
+          err.message ||
+          'An error ocurred while retrieving boilers-types data.',
       });
     });
 };
 
 exports.findOne = (req, res) => {
-  boilersTypes.findOne({ typeId: req.params.typeId })
-    .then(data => {
+  boilersTypes
+    .findOne({typeId: req.params.typeId})
+    .then((data) => {
       if (!data) {
         return res.status(404).send({
-          message: `No building with typeId ${req.params.typeId}`
-        })
+          message: `No building with typeId ${req.params.typeId}`,
+        });
       }
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: err.message || "An error ocurred while retrieving boilers-types data."
+        message:
+          err.message ||
+          'An error ocurred while retrieving boilers-types data.',
       });
     });
 };
 
 exports.create = (req, res) => {
-  if (!req.body.typeId || !req.body.skillsId || !req.body.description || !req.body.stock) {
-    res.status(400).send({ message: "All boilers-types data fields are required!" });
+  if (
+    !req.body.typeId ||
+    !req.body.skillsId ||
+    !req.body.description ||
+    !req.body.stock
+  ) {
+    res
+      .status(400)
+      .send({message: 'All boilers-types data fields are required!'});
     return;
   }
 
@@ -45,12 +58,13 @@ exports.create = (req, res) => {
 
   boilersType
     .save(boilersType)
-    .then(data => {
+    .then((data) => {
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: err.message || "An error ocurred while adding the new boiler type"
+        message:
+          err.message || 'An error ocurred while adding the new boiler type',
       });
     });
 };
@@ -58,45 +72,57 @@ exports.create = (req, res) => {
 exports.update = (req, res) => {
   if (!req.body) {
     return res.status(400).send({
-      message: "Unable to update with empty data"
+      message: 'Unable to update with empty data',
     });
   }
 
-  if (!req.body.typeId || !req.body.skillsId || !req.body.description || !req.body.stock) {
-    res.status(400).send({ message: "To update the boilers-type all fields must not be empty" });
+  if (
+    !req.body.typeId ||
+    !req.body.skillsId ||
+    !req.body.description ||
+    !req.body.stock
+  ) {
+    res
+      .status(400)
+      .send({
+        message: 'To update the boilers-type all fields must not be empty',
+      });
     return;
   }
 
   const id = req.params.typeId;
 
-  buildings.findOneAndUpdate({ typeId }, req.body, { useFindAndModify: false })
-    .then(data => {
+  buildings
+    .findOneAndUpdate({typeId}, req.body, {useFindAndModify: false})
+    .then((data) => {
       if (!data) {
         return res.status(404).send({
-          message: `Cannot update boilers-type with typeId ${typeId}. Boilers-type with this typeId does not exist in DB.`
+          message: `Cannot update boilers-type with typeId ${typeId}. Boilers-type with this typeId does not exist in DB.`,
         });
-      } else res.send({ message: "boilers-type successfully updated." });
+      } else res.send({message: 'boilers-type successfully updated.'});
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: err.message || "An error ocurred while updating the boilers-type."
+        message:
+          err.message || 'An error ocurred while updating the boilers-type.',
       });
     });
 };
 
 exports.delete = (req, res) => {
   const id = req.params.typeId;
-  buildings.findOneAndRemove({ typeId }, { useFindAndModify: false })
-    .then(data => {
+  buildings
+    .findOneAndRemove({typeId}, {useFindAndModify: false})
+    .then((data) => {
       if (!data) {
         return res.status(404).send({
-          message: `Cannot delete boilers-type with typeId ${typeId}. Boilers-type with this typeId does not exist in DB.`
+          message: `Cannot delete boilers-type with typeId ${typeId}. Boilers-type with this typeId does not exist in DB.`,
         });
-      } else res.send({ message: "building successfully deleted." });
+      } else res.send({message: 'building successfully deleted.'});
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: err.message || "An error ocurred while deleting the building."
+        message: err.message || 'An error ocurred while deleting the building.',
       });
     });
 };

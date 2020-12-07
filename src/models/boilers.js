@@ -1,6 +1,6 @@
 module.exports = (mongoose) =>
   mongoose.model(
-    "boilers",
+    'boilers',
     mongoose.Schema(
       {
         id: Number,
@@ -11,6 +11,6 @@ module.exports = (mongoose) =>
         hour_eventual_cost: String,
         warehouse_id: Number,
       },
-      { timestamps: true }
-    )
+      {timestamps: true},
+    ),
   );
