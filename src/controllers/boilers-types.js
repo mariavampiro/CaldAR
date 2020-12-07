@@ -1,9 +1,7 @@
-const db = require('../models');
-const boilersTypes = db.boilersTypes;
+const BoilersTypes = require('../models').boilersTypes;
 
 exports.findAll = (req, res) => {
-  boilersTypes
-    .find({})
+  BoilersTypes.find({})
     .then((data) => {
       res.send(data);
     })
@@ -17,8 +15,7 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  boilersTypes
-    .findOne({typeId: req.params.typeId})
+  BoilersTypes.findOne({typeId: req.params.typeId})
     .then((data) => {
       if (!data) {
         return res.status(404).send({
@@ -49,7 +46,7 @@ exports.create = (req, res) => {
     return;
   }
 
-  const boilersType = new boilersTypes({
+  const boilersType = new BoilersTypes({
     typeId: req.body.typeId,
     skillsId: req.body.skillsId,
     description: req.body.description,
@@ -69,60 +66,62 @@ exports.create = (req, res) => {
     });
 };
 
-exports.update = (req, res) => {
-  if (!req.body) {
-    return res.status(400).send({
-      message: 'Unable to update with empty data',
-    });
-  }
+exports.update = (req, res) =>
+  // TODO Correct!!!
+  // if (!req.body) {
+  //   return res.status(400).send({
+  //     message: 'Unable to update with empty data',
+  //   });
+  // }
 
-  if (
-    !req.body.typeId ||
-    !req.body.skillsId ||
-    !req.body.description ||
-    !req.body.stock
-  ) {
-    res
-      .status(400)
-      .send({
-        message: 'To update the boilers-type all fields must not be empty',
-      });
-    return;
-  }
+  // if (
+  //   !req.body.typeId ||
+  //   !req.body.skillsId ||
+  //   !req.body.description ||
+  //   !req.body.stock
+  // ) {
+  //   res
+  //     .status(400)
+  //     .send({
+  //       message: 'To update the boilers-type all fields must not be empty',
+  //     });
+  //   return;
+  // }
 
-  const id = req.params.typeId;
+  // const id = req.params.typeId;
 
-  buildings
-    .findOneAndUpdate({typeId}, req.body, {useFindAndModify: false})
-    .then((data) => {
-      if (!data) {
-        return res.status(404).send({
-          message: `Cannot update boilers-type with typeId ${typeId}. Boilers-type with this typeId does not exist in DB.`,
-        });
-      } else res.send({message: 'boilers-type successfully updated.'});
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message || 'An error ocurred while updating the boilers-type.',
-      });
-    });
-};
+  // buildings
+  //   .findOneAndUpdate({typeId}, req.body, {useFindAndModify: false})
+  //   .then((data) => {
+  //     if (!data) {
+  //       return res.status(404).send({
+  //         message: `Cannot update boilers-type with typeId ${typeId}. Boilers-type with this typeId does not exist in DB.`,
+  //       });
+  //     } res.send({message: 'boilers-type successfully updated.'});
+  //   })
+  //   .catch((err) => {
+  //     res.status(500).send({
+  //       message:
+  //         err.message || 'An error ocurred while updating the boilers-type.',
+  //     });
+  //   });
+  res.send({message: 'building successfully deleted.'});
 
-exports.delete = (req, res) => {
-  const id = req.params.typeId;
-  buildings
-    .findOneAndRemove({typeId}, {useFindAndModify: false})
-    .then((data) => {
-      if (!data) {
-        return res.status(404).send({
-          message: `Cannot delete boilers-type with typeId ${typeId}. Boilers-type with this typeId does not exist in DB.`,
-        });
-      } else res.send({message: 'building successfully deleted.'});
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message: err.message || 'An error ocurred while deleting the building.',
-      });
-    });
-};
+exports.delete = (req, res) =>
+  // TODO Correct!!!
+  // const id = req.params.typeId;
+  // buildings
+  //   .findOneAndRemove({typeId}, {useFindAndModify: false})
+  //   .then((data) => {
+  //     if (!data) {
+  //       return res.status(404).send({
+  //         message: `Cannot delete boilers-type with typeId ${typeId}. Boilers-type with this typeId does not exist in DB.`,
+  //       });
+  //     } res.send({message: 'building successfully deleted.'});
+  //   })
+  //   .catch((err) => {
+  //     res.status(500).send({
+  //       message: err.message || 'An error ocurred while deleting the building.',
+  //     });
+  //   });
+  res.send({message: 'building successfully deleted.'});

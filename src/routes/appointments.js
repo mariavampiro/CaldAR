@@ -1,5 +1,6 @@
-const appointmentsController = require('../controllers/appointments');
 const express = require('express');
+const appointmentsController = require('../controllers/appointments');
+
 const router = express.Router();
 
 router.get('/', appointmentsController.findAll);

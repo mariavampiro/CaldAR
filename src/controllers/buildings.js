@@ -1,8 +1,8 @@
-const db = require('../models');
-const buildings = db.buildings;
+const Buildings = require('../models').buildings;
+
 
 exports.findAll = (req, res) => {
-  buildings
+  Buildings
     .find({})
     .then((data) => {
       res.send(data);
@@ -15,7 +15,7 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  buildings
+  Buildings
     .findOne({id: req.params.id})
     .then((data) => {
       if (!data) {
@@ -44,7 +44,7 @@ exports.create = (req, res) => {
     return;
   }
 
-  const building = new buildings({
+  const building = new Buildings({
     id: req.body.id,
     address: req.body.address,
     boilersId: req.body.boilersId,
@@ -86,14 +86,14 @@ exports.update = (req, res) => {
 
   const id = req.params.id;
 
-  buildings
+  Buildings
     .findOneAndUpdate({id}, req.body, {useFindAndModify: false})
     .then((data) => {
       if (!data) {
         return res.status(404).send({
           message: `Cannot update building with id ${id}. Building with this id may not exist.`,
         });
-      } else res.send({message: 'Building successfully updated.'});
+      } res.send({message: 'Building successfully updated.'});
     })
     .catch((err) => {
       res.status(500).send({
@@ -104,14 +104,14 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
   const id = req.params.id;
-  buildings
+  Buildings
     .findOneAndRemove({id}, {useFindAndModify: false})
     .then((data) => {
       if (!data) {
         return res.status(404).send({
           message: `Cannot delete building with id ${id}. Building with this id may not exist.`,
         });
-      } else res.send({message: 'building successfully deleted.'});
+      } res.send({message: 'building successfully deleted.'});
     })
     .catch((err) => {
       res.status(500).send({

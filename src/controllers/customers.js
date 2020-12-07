@@ -1,8 +1,8 @@
-const db = require('../models');
-const customers = db.customers;
+const Customers = require('../models').customers;
+
 
 exports.findAll = (req, res) => {
-  customers
+  Customers
     .find({})
     .then((data) => {
       res.send(data);
@@ -15,7 +15,7 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  customers
+  Customers
     .findOne({id: req.params.id})
     .then((data) => {
       if (!data) {
@@ -44,7 +44,7 @@ exports.create = (req, res) => {
     return;
   }
 
-  const customer = new customers({
+  const customer = new Customers({
     id: req.body.id,
     customerType: req.body.customerType,
     email: req.body.email,
@@ -86,14 +86,14 @@ exports.update = (req, res) => {
 
   const id = req.params.id;
 
-  customers
+  Customers
     .findOneAndUpdate({id}, req.body, {useFindAndModify: false})
     .then((data) => {
       if (!data) {
         return res.status(404).send({
           message: `Cannot update customer with id ${id}. Customer with this id may not exist.`,
         });
-      } else res.send({message: 'Customer successfully updated.'});
+      } res.send({message: 'Customer successfully updated.'});
     })
     .catch((err) => {
       res.status(500).send({
@@ -104,14 +104,14 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
   const id = req.params.id;
-  customers
+  Customers
     .findOneAndRemove({id}, {useFindAndModify: false})
     .then((data) => {
       if (!data) {
         return res.status(404).send({
           message: `Cannot delete customer with id ${id}. Customer with this id may not exist.`,
         });
-      } else res.send({message: 'Customer successfully deleted.'});
+      } res.send({message: 'Customer successfully deleted.'});
     })
     .catch((err) => {
       res.status(500).send({

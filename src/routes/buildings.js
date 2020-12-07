@@ -1,5 +1,6 @@
-const buildingsController = require('../controllers/buildings');
 const express = require('express');
+const buildingsController = require('../controllers/buildings');
+
 const router = express.Router();
 
 router.get('/', buildingsController.findAll);

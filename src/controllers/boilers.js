@@ -1,20 +1,20 @@
-const boilers = require('../models').boilers;
+const Boilers = require('../models').boilers;
 
 exports.findAll = (req, res) => {
   const typeId = +req.query.typeId || '';
   const warehouse = +req.query.warehouse_id || '';
 
   if (!typeId && !warehouse)
-    return boilers
+    return Boilers
       .find({})
       .then((data) => res.send(data))
       .catch((err) =>
         res.status(500).send({message: err.message || 'Error in query db'}),
       );
 
-  return boilers
+  return Boilers
     .find({
-      $or: [{typeId: typeId}, {warehouse_id: warehouse}],
+      $or: [{typeId}, {warehouse_id: warehouse}],
     })
     .then((data) => res.send(data))
     .catch((err) =>
@@ -47,7 +47,7 @@ exports.create = (req, res) => {
         'Incomplete id, typeId, status, maintaince_rate, hour_maintaince_cost, hour_eventual_cost, warehouse_id',
     });
 
-  const boiler = new boilers({
+  const boiler = new Boilers({
     id,
     typeId,
     status,
@@ -72,7 +72,7 @@ exports.create = (req, res) => {
 exports.findById = (req, res) => {
   const id = +req.params.id || '';
 
-  boilers
+  Boilers
     .findOne({id})
     .then((data) => {
       if (!data)
@@ -120,7 +120,7 @@ exports.editById = (req, res) => {
         'Incomplete id, typeId, status, maintaince_rate, hour_maintaince_cost, hour_eventual_cost, warehouse_id',
     });
 
-  boilers
+  Boilers
     .findOneAndUpdate({id: idBoiler}, req.body, {
       useFindAndModify: false,
     })
@@ -144,7 +144,7 @@ exports.deleteById = (req, res) => {
 
   if (!id) return res.status(400).send({message: `Invalid Id ${id}`});
 
-  boilers
+  Boilers
     .findOneAndDelete({id}, {useFindAndModify: false})
     .then((data) => {
       res.sendStatus(204);

@@ -1,5 +1,6 @@
-const boilersTypesController = require('../controllers/boilers-types');
 const express = require('express');
+const boilersTypesController = require('../controllers/boilers-types');
+
 const router = express.Router();
 
 router.get('/', boilersTypesController.findAll);

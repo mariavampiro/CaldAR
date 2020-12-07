@@ -1,5 +1,6 @@
-const techniciansController = require('../controllers/technicians');
 const express = require('express');
+const techniciansController = require('../controllers/technicians');
+
 const router = express.Router();
 
 router.get('/', techniciansController.findAll);

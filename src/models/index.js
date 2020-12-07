@@ -7,7 +7,7 @@ const techniciansSchemas = require('./technicians')(mongoose);
 const boilersTypesSchemas = require('./boilers-types')(mongoose);
 
 module.exports = {
-  mongoose: mongoose,
+  mongoose,
 
   url: process.env.DB_CONNECTION_URL,
 

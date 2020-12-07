@@ -1,4 +1,5 @@
 const express = require('express');
+
 const app = express();
 const bodyParser = require('body-parser');
 const routes = require('./src/routes');
@@ -24,6 +25,6 @@ db.mongoose
     });
   })
   .catch((err) => {
-    console.error('Cannot connect to DB!', err);
+    console.error('Cannot connect to DB!... Exiting...', err);
     process.exit();
   });
