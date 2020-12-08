@@ -46,5 +46,8 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
