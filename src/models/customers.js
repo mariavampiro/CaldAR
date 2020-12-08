@@ -1,6 +1,6 @@
 module.exports = (mongoose) =>
   mongoose.model(
-    "customers",
+    'customers',
     mongoose.Schema(
       {
         id: Number,
@@ -9,6 +9,6 @@ module.exports = (mongoose) =>
         buildingsId: [],
         fiscalAddress: String,
       },
-      { timestamps: true }
-    )
+      {timestamps: true},
+    ),
   );

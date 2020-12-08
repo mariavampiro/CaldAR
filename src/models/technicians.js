@@ -1,6 +1,6 @@
 module.exports = (mongoose) =>
   mongoose.model(
-    "technicians",
+    'technicians',
     mongoose.Schema(
       {
         id: Number,
@@ -12,6 +12,6 @@ module.exports = (mongoose) =>
         hour_rate: Number,
         daily_capacity: Number,
       },
-      { timestamps: true }
-    )
+      {timestamps: true},
+    ),
   );
