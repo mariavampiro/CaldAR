@@ -1,6 +1,6 @@
 module.exports = (mongoose) =>
   mongoose.model(
-    "boiler-types",
+    'boiler-types',
     mongoose.Schema(
       {
         typeId: Number,
@@ -8,9 +8,6 @@ module.exports = (mongoose) =>
         description: String,
         stock: Number,
       },
-      { timestamps: true }
-    )
+      {timestamps: true},
+    ),
   );
-
-
-

@@ -1,6 +1,6 @@
 module.exports = (mongoose) =>
   mongoose.model(
-    "buildings",
+    'buildings',
     mongoose.Schema(
       {
         id: Number,
@@ -9,6 +9,6 @@ module.exports = (mongoose) =>
         fullName: String,
         phone: String,
       },
-      { timestamps: true }
-    )
+      {timestamps: true},
+    ),
   );

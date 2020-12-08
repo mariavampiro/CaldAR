@@ -1,6 +1,6 @@
 module.exports = (mongoose) =>
   mongoose.model(
-    "appointments",
+    'appointments',
     mongoose.Schema(
       {
         id: Number,
@@ -9,6 +9,6 @@ module.exports = (mongoose) =>
         start_timestamp: Date,
         end_timestamp: Date,
       },
-      { timestamps: true }
-    )
+      {timestamps: true},
+    ),
   );
