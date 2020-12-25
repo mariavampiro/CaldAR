@@ -1,152 +1,284 @@
-[
-  {
-    "id": 1,
-    "first_name ": "Harv",
-    "last_name": "Aizlewood",
-    "email": "haizlewood0@ycombinator.com",
-    "type_ids": [1, 2, 3],
-    "skills_Id": [2, 8],
-    "hour_rate": "$24.85",
-    "daily_capacity": 3
-  },
-  {
-    "id": 2,
-    "first_name ": "Else",
-    "last_name": "Westrey",
-    "email": "ewestrey1@1688.com",
-    "type_ids": [1, 2],
-    "skills_Id": [9, 4],
-    "hour_rate": "$6.86",
-    "daily_capacity": 5
-  },
-  {
-    "id": 3,
-    "first_name ": "Pepillo",
-    "last_name": "Stitfall",
-    "email": "pstitfall2@nature.com",
-    "type_ids": [2],
-    "skills_Id": [4, 8, 9, 5, 2, 3, 1, 6, 7],
-    "hour_rate": "$30.00",
-    "daily_capacity": 5
-  },
-  {
-    "id": 4,
-    "first_name ": "Shawna",
-    "last_name": "Elson",
-    "email": "selson3@globo.com",
-    "type_ids": [2],
-    "skills_Id": [2, 9, 4, 5],
-    "hour_rate": "$12.94",
-    "daily_capacity": 4
-  },
-  {
-    "id": 5,
-    "first_name ": "Franklin",
-    "last_name": "Cowle",
-    "email": "fcowle4@apple.com",
-    "type_ids": [1],
-    "skills_Id": [6, 2, 1, 9],
-    "hour_rate": "$41.44",
-    "daily_capacity": 3
-  },
-  {
-    "id": 6,
-    "first_name ": "Tynan",
-    "last_name": "Cream",
-    "email": "tcream5@mayoclinic.com",
-    "type_ids": [3],
-    "skills_Id": [7, 5, 2, 9, 6, 1, 3, 4],
-    "hour_rate": "$23.87",
-    "daily_capacity": 5
-  },
-  {
-    "id": 7,
-    "first_name ": "Chaddie",
-    "last_name": "Gantzer",
-    "email": "cgantzer6@imageshack.us",
-    "type_ids": [1, 3, 2],
-    "skills_Id": [7, 9, 4, 3, 8, 6, 2],
-    "hour_rate": "$20.79",
-    "daily_capacity": 8
-  },
-  {
-    "id": 8,
-    "first_name ": "Carter",
-    "last_name": "Goldhill",
-    "email": "cgoldhill7@w3.org",
-    "type_ids": [3],
-    "skills_Id": [7, 2],
-    "hour_rate": "$11.69",
-    "daily_capacity": 3
-  },
-  {
-    "id": 9,
-    "first_name ": "Fergus",
-    "last_name": "McCurley",
-    "email": "fmccurley8@state.gov",
-    "type_ids": [1, 2],
-    "skills_Id": [3, 7, 4, 2, 9],
-    "hour_rate": "$20.31",
-    "daily_capacity": 4
-  },
-  {
-    "id": 10,
-    "first_name ": "Irvine",
-    "last_name": "Vescovo",
-    "email": "ivescovo9@ebay.co.uk",
-    "type_ids": [2, 3],
-    "skills_Id": [6, 7],
-    "hour_rate": "$48.39",
-    "daily_capacity": 4
-  },
-  {
-    "id": 11,
-    "first_name ": "Gunner",
-    "last_name": "McEwen",
-    "email": "gmcewena@mapquest.com",
-    "type_ids": [1],
-    "skills_Id": [1, 9, 8, 7, 6],
-    "hour_rate": "$8.16",
-    "daily_capacity": 4
-  },
-  {
-    "id": 12,
-    "first_name ": "Caleb",
-    "last_name": "Laxen",
-    "email": "claxenb@reddit.com",
-    "type_ids": [],
-    "skills_Id": [6, 2, 8],
-    "hour_rate": "$36.81",
-    "daily_capacity": 5
-  },
-  {
-    "id": 13,
-    "first_name ": "Bibi",
-    "last_name": "Barby",
-    "email": "bbarbyc@army.mil",
-    "type_ids": [],
-    "skills_Id": [8, 5, 1, 6, 2, 3, 4, 7, 9],
-    "hour_rate": "$3.15",
-    "daily_capacity": 8
-  },
-  {
-    "id": 14,
-    "first_name ": "Leigha",
-    "last_name": "Anderer",
-    "email": "landererd@edublogs.org",
-    "type_ids": [],
-    "skills_Id": [7, 1, 8, 3, 9, 2, 5, 6],
-    "hour_rate": "$14.41",
-    "daily_capacity": 7
-  },
-  {
-    "id": 15,
-    "first_name ": "Sher",
-    "last_name": "Gammade",
-    "email": "sgammadee@si.edu",
-    "type_ids": [1],
-    "skills_Id": [4, 7, 9, 8],
-    "hour_rate": "$26.84",
-    "daily_capacity": 0
-  }
-]
+[{
+  "id": 1,
+  "first_name": "Helena",
+  "last_name": "Stitwell",
+  "email": "hstitwell0@macromedia.com",
+  "address": "0464 Paget Pass",
+  "phone": "+86 812 534 4678",
+  "expertise": [
+    "D",
+    "C"
+  ]
+}, {
+  "id": 2,
+  "first_name": "Corly",
+  "last_name": "Pendall",
+  "email": "cpendall1@topsy.com",
+  "address": "8099 Alpine Parkway",
+  "phone": "+63 486 428 2130",
+  "expertise": [
+    "C",
+    "A",
+    "B"
+  ]
+}, {
+  "id": 3,
+  "first_name": "Edwin",
+  "last_name": "Klimsch",
+  "email": "eklimsch2@psu.edu",
+  "address": "1133 Oak Valley Avenue",
+  "phone": "+256 707 451 8371",
+  "expertise": [
+    "B",
+    "A"
+  ]
+}, {
+  "id": 4,
+  "first_name": "Roxanna",
+  "last_name": "Konneke",
+  "email": "rkonneke3@mac.com",
+  "address": "29 Marquette Parkway",
+  "phone": "+351 612 116 6136",
+  "expertise": [
+    "B"
+  ]
+}, {
+  "id": 5,
+  "first_name": "Caroline",
+  "last_name": "Kidney",
+  "email": "ckidney4@shop-pro.jp",
+  "address": "00001 Starling Avenue",
+  "phone": "+63 237 503 9458",
+  "expertise": [
+    "D",
+    "B",
+    "A",
+    "C"
+  ]
+}, {
+  "id": 6,
+  "first_name": "Knox",
+  "last_name": "Jewsbury",
+  "email": "kjewsbury5@umn.edu",
+  "address": "5502 Linden Trail",
+  "phone": "+33 194 111 8301",
+  "expertise": [
+    "D"
+  ]
+}, {
+  "id": 7,
+  "first_name": "Casey",
+  "last_name": "Morritt",
+  "email": "cmorritt6@tmall.com",
+  "address": "40 Green Terrace",
+  "phone": "+46 682 568 9506",
+  "expertise": [
+    "C",
+    "B",
+    "D"
+  ]
+}, {
+  "id": 8,
+  "first_name": "Hoebart",
+  "last_name": "Gorring",
+  "email": "hgorring7@macromedia.com",
+  "address": "07 Forest Run Center",
+  "phone": "+86 711 606 8150",
+  "expertise": [
+    "A",
+    "B",
+    "D"
+  ]
+}, {
+  "id": 9,
+  "first_name": "Myrtia",
+  "last_name": "Temlett",
+  "email": "mtemlett8@shinystat.com",
+  "address": "5 Mifflin Way",
+  "phone": "+504 858 722 6366",
+  "expertise": [
+    "C",
+    "D"
+  ]
+}, {
+  "id": 10,
+  "first_name": "Donnamarie",
+  "last_name": "Carnow",
+  "email": "dcarnow9@goodreads.com",
+  "address": "03948 Twin Pines Hill",
+  "phone": "+1 814 478 2069",
+  "expertise": [
+
+  ]
+}, {
+  "id": 11,
+  "first_name": "Karrie",
+  "last_name": "Duesberry",
+  "email": "kduesberrya@va.gov",
+  "address": "2527 Karstens Hill",
+  "phone": "+963 803 719 8001",
+  "expertise": [
+    "C",
+    "A",
+    "D",
+    "B"
+  ]
+}, {
+  "id": 12,
+  "first_name": "Mario",
+  "last_name": "Rae",
+  "email": "mraeb@opera.com",
+  "address": "34 Coolidge Junction",
+  "phone": "+86 130 419 6576",
+  "expertise": [
+    "D",
+    "C"
+  ]
+}, {
+  "id": 13,
+  "first_name": "Warde",
+  "last_name": "Mayell",
+  "email": "wmayellc@edublogs.org",
+  "address": "6835 Farwell Pass",
+  "phone": "+57 781 107 2667",
+  "expertise": [
+
+  ]
+}, {
+  "id": 14,
+  "first_name": "Ludvig",
+  "last_name": "Snipe",
+  "email": "lsniped@ask.com",
+  "address": "34 Maple Parkway",
+  "phone": "+86 508 629 5390",
+  "expertise": [
+    "B",
+    "A",
+    "D",
+    "C"
+  ]
+}, {
+  "id": 15,
+  "first_name": "Ruthann",
+  "last_name": "Androli",
+  "email": "randrolie@joomla.org",
+  "address": "629 Crownhardt Circle",
+  "phone": "+62 183 553 0627",
+  "expertise": [
+    "A"
+  ]
+}, {
+  "id": 16,
+  "first_name": "Isidor",
+  "last_name": "Castille",
+  "email": "icastillef@disqus.com",
+  "address": "26 Ramsey Center",
+  "phone": "+98 661 399 6913",
+  "expertise": [
+    "D"
+  ]
+}, {
+  "id": 17,
+  "first_name": "Freeland",
+  "last_name": "Aasaf",
+  "email": "faasafg@comsenz.com",
+  "address": "336 Summer Ridge Road",
+  "phone": "+54 280 488 4149",
+  "expertise": [
+    "C",
+    "D"
+  ]
+}, {
+  "id": 18,
+  "first_name": "Efrem",
+  "last_name": "Kovelmann",
+  "email": "ekovelmannh@mozilla.org",
+  "address": "04 Marquette Court",
+  "phone": "+62 905 408 5419",
+  "expertise": [
+    "A",
+    "D",
+    "B"
+  ]
+}, {
+  "id": 19,
+  "first_name": "Robyn",
+  "last_name": "Suffe",
+  "email": "rsuffei@ebay.co.uk",
+  "address": "70 Crest Line Park",
+  "phone": "+86 168 713 6432",
+  "expertise": [
+    "C",
+    "B"
+  ]
+}, {
+  "id": 20,
+  "first_name": "Arlyn",
+  "last_name": "Dorie",
+  "email": "adoriej@pagesperso-orange.fr",
+  "address": "807 Red Cloud Street",
+  "phone": "+86 399 625 5048",
+  "expertise": [
+    "D"
+  ]
+}, {
+  "id": 21,
+  "first_name": "Doria",
+  "last_name": "MacNamara",
+  "email": "dmacnamarak@ucoz.com",
+  "address": "42548 Springs Trail",
+  "phone": "+86 649 664 4231",
+  "expertise": [
+    "A",
+    "C",
+    "D",
+    "B"
+  ]
+}, {
+  "id": 22,
+  "first_name": "L;urette",
+  "last_name": "Coston",
+  "email": "lcostonl@mail.ru",
+  "address": "0435 Granby Court",
+  "phone": "+51 970 569 4119",
+  "expertise": [
+    "D",
+    "C",
+    "A",
+    "B"
+  ]
+}, {
+  "id": 23,
+  "first_name": "Melisa",
+  "last_name": "Bompass",
+  "email": "mbompassm@sciencedirect.com",
+  "address": "7 Hagan Way",
+  "phone": "+255 154 234 9657",
+  "expertise": [
+    "C",
+    "B"
+  ]
+}, {
+  "id": 24,
+  "first_name": "Sheilakathryn",
+  "last_name": "Fomichkin",
+  "email": "sfomichkinn@state.gov",
+  "address": "7152 Cardinal Plaza",
+  "phone": "+351 859 472 2239",
+  "expertise": [
+    "D",
+    "A"
+  ]
+}, {
+  "id": 25,
+  "first_name": "Quinn",
+  "last_name": "Playfoot",
+  "email": "qplayfooto@salon.com",
+  "address": "14 Blaine Avenue",
+  "phone": "+62 179 719 5460",
+  "expertise": [
+    "B",
+    "D",
+    "A"
+  ]
+}]
