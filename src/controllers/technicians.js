@@ -28,39 +28,37 @@ exports.create = (req, res) => {
     expertise,
   } = req.body;
 
-  if (
-    !id ||
-    !first_name ||
-    !last_name ||
-    !email ||
-    !address ||
-    !phone ||
-    !expertise
-  )
+  if (!first_name || !last_name || !email || !address || !phone || !expertise)
     return res.status(400).send({
       message:
         'Uncomplete id, first_name last_name, email, address, phone, expertise, ',
     });
 
-  const technicians = new Technicians({
-    id,
-    first_name,
-    last_name,
-    email,
-    address,
-    phone,
-    expertise,
-  });
-
-  technicians
-    .save(technicians)
-    .then((data) => {
-      res.status(201).send(data);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message: err.message || 'Error in saving resource in DB.',
+  Technicians.find()
+    .sort({id: -1})
+    .limit(1)
+    .then((r) => {
+      const id = r.length === 0 ? 0 : r[0].id + 1;
+      const technicians = new Technicians({
+        id,
+        first_name,
+        last_name,
+        email,
+        address,
+        phone,
+        expertise,
       });
+
+      technicians
+        .save(technicians)
+        .then((data) => {
+          res.status(201).send(data);
+        })
+        .catch((err) => {
+          res.status(500).send({
+            message: err.message || 'Error in saving resource in DB.',
+          });
+        });
     });
 };
 
