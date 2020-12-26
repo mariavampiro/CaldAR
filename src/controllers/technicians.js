@@ -23,47 +23,42 @@ exports.create = (req, res) => {
     first_name,
     last_name,
     email,
-    type_ids,
-    skills_id,
-    hour_rate,
-    daily_capacity,
+    address,
+    phone,
+    expertise,
   } = req.body;
 
-  if (
-    !id ||
-    !first_name ||
-    !last_name ||
-    !email ||
-    !type_ids ||
-    !skills_id ||
-    !hour_rate ||
-    !daily_capacity
-  )
+  if (!first_name || !last_name || !email || !address || !phone || !expertise)
     return res.status(400).send({
       message:
-        'Uncomplete id, first_name, last_name, email, type_ids, skills_id, hour_rate, daily_capacity',
+        'Uncomplete id, first_name last_name, email, address, phone, expertise, ',
     });
 
-  const technicians = new Technicians({
-    id,
-    first_name,
-    last_name,
-    email,
-    type_ids,
-    skills_id,
-    hour_rate,
-    daily_capacity,
-  });
-
-  technicians
-    .save(technicians)
-    .then((data) => {
-      res.status(201).send(data);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message: err.message || 'Error in saving resource in DB.',
+  Technicians.find()
+    .sort({id: -1})
+    .limit(1)
+    .then((r) => {
+      const id = r.length === 0 ? 0 : r[0].id + 1;
+      const technicians = new Technicians({
+        id,
+        first_name,
+        last_name,
+        email,
+        address,
+        phone,
+        expertise,
       });
+
+      technicians
+        .save(technicians)
+        .then((data) => {
+          res.status(201).send(data);
+        })
+        .catch((err) => {
+          res.status(500).send({
+            message: err.message || 'Error in saving resource in DB.',
+          });
+        });
     });
 };
 
@@ -75,7 +70,7 @@ exports.findById = (req, res) => {
       if (!data)
         return res
           .status(404)
-          .send({message: `Appouintment ${req.params.id} was not found.`});
+          .send({message: `Technicians ${req.params.id} was not found.`});
 
       res.send(data);
     })
@@ -98,10 +93,9 @@ exports.editById = (req, res) => {
     first_name,
     last_name,
     email,
-    type_ids,
-    skills_id,
-    hour_rate,
-    daily_capacity,
+    address,
+    phone,
+    expertise,
   } = req.body;
 
   if (
@@ -109,14 +103,13 @@ exports.editById = (req, res) => {
     !first_name ||
     !last_name ||
     !email ||
-    !type_ids ||
-    !skills_id ||
-    !hour_rate ||
-    !daily_capacity
+    !address ||
+    !phone ||
+    !expertise
   )
     return res.status(400).send({
       message:
-        'Uncomplete id, first_name, last_name, email, type_ids, skills_id, hour_rate, daily_capacity',
+        'Uncomplete id, first_name last_name, email, address, phone, expertise, ',
     });
 
   Technicians.findOneAndUpdate({id: idTechnician}, req.body, {
@@ -126,9 +119,9 @@ exports.editById = (req, res) => {
       if (!data)
         return res
           .status(404)
-          .send({message: `Appouintment ${req.params.id} was not found.`});
+          .send({message: `Technicians ${req.params.id} was not found.`});
 
-      res.send({message: `Appouintment ${req.params.id} was updated.`});
+      res.send({message: `Technicians ${req.params.id} was updated.`});
     })
     .catch((err) => {
       res.status(500).send({
