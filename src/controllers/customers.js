@@ -35,10 +35,13 @@ exports.findOne = (req, res) => {
 exports.create = (req, res) => {
   if (
     !req.body.id ||
-    !req.body.customerType ||
+    !req.body.businessName ||
+    !req.body.contactName ||
     !req.body.email ||
-    !req.body.buildingsId ||
-    !req.body.fiscalAddress
+    !req.body.phone ||
+    !req.body.fiscalAddress ||
+    !req.body.type ||
+    !req.body.buildings
   ) {
     res.status(400).send({message: 'All customers fields must have data!'});
     return;
@@ -46,10 +49,13 @@ exports.create = (req, res) => {
 
   const customer = new Customers({
     id: req.body.id,
-    customerType: req.body.customerType,
+    businessName: req.body.businessName,
+    contactName: req.body.contactName,
     email: req.body.email,
-    buildingsId: req.body.buildingsId,
+    phone: req.body.phone,
     fiscalAddress: req.body.fiscalAddress,
+    type: req.body.type,
+    buildings: req.body.buildings  
   });
 
   customer
@@ -73,10 +79,13 @@ exports.update = (req, res) => {
 
   if (
     !req.body.id ||
-    !req.body.customerType ||
+    !req.body.businessName ||
+    !req.body.contactName ||
     !req.body.email ||
-    !req.body.buildingsId ||
-    !req.body.fiscalAddress
+    !req.body.phone ||
+    !req.body.fiscalAddress ||
+    !req.body.type ||
+    !req.body.buildings
   ) {
     res
       .status(400)
