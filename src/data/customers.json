@@ -1,9 +1,9 @@
 [{"id":1,"businessName":"Skippad","contactName":"Diannne Jepp","email":"djepp0@miibeian.gov.cn","phone":"(361) 8427556","fiscalAddress":"3 Elmside Crossing","type":"construction company","buildings":[24,66]},
-{"id":2,"businessName":"Wikido","contactName":"Maximilianus Geal","email":"mgeal1@bbb.org","phone":"(919) 3514488","fiscalAddress":"9742 Melrose Pass","type":"particular","buildings":[39,100,10]},
+{"id":2,"businessName":"Wikido","contactName":"Maximilianus Geal","email":"mgeal1@bbb.org","phone":"(919) 3514488","fiscalAddress":"9742 Melrose Pass","type":"particular","buildings":[39]},
 {"id":3,"businessName":"Janyx","contactName":"Nevins Scriviner","email":"nscriviner2@washingtonpost.com","phone":"(286) 6407039","fiscalAddress":"9339 Ridge Oak Way","type":"construction company","buildings":[1,83]},
-{"id":4,"businessName":"Avamm","contactName":"Bendick Prendergast","email":"bprendergast3@umich.edu","phone":"(176) 2270242","fiscalAddress":"7 Maple Wood Center","type":"particular","buildings":[61,5,47,13,70]},
+{"id":4,"businessName":"Avamm","contactName":"Bendick Prendergast","email":"bprendergast3@umich.edu","phone":"(176) 2270242","fiscalAddress":"7 Maple Wood Center","type":"particular","buildings":[70]},
 {"id":5,"businessName":"Jamia","contactName":"Alis Ianelli","email":"aianelli4@imgur.com","phone":"(799) 2986951","fiscalAddress":"054 Ridgeway Road","type":"construction company","buildings":[1,14,63]},
-{"id":6,"businessName":"Babbleset","contactName":"Arnie Inglesant","email":"ainglesant5@shareasale.com","phone":"(630) 7219186","fiscalAddress":"4179 Truax Street","type":"particular","buildings":[32,20,70]},
-{"id":7,"businessName":"Cogilith","contactName":"Betti Ebbetts","email":"bebbetts6@digg.com","phone":"(574) 5117607","fiscalAddress":"4 Center Avenue","type":"particular","buildings":[22,82]},
+{"id":6,"businessName":"Babbleset","contactName":"Arnie Inglesant","email":"ainglesant5@shareasale.com","phone":"(630) 7219186","fiscalAddress":"4179 Truax Street","type":"particular","buildings":[32]},
+{"id":7,"businessName":"Cogilith","contactName":"Betti Ebbetts","email":"bebbetts6@digg.com","phone":"(574) 5117607","fiscalAddress":"4 Center Avenue","type":"particular","buildings":[22]},
 {"id":8,"businessName":"Gigabox","contactName":"Frayda O'Lehane","email":"folehane7@cocolog-nifty.com","phone":"(998) 3636738","fiscalAddress":"737 Kropf Avenue","type":"construction company","buildings":[74,62]},
 {"id":9,"businessName":"Topiczoom","contactName":"Gibb Molfino","email":"gmolfino8@wordpress.com","phone":"(704) 8870358","fiscalAddress":"0 Vahlen Way","type":"construction company","buildings":[52,22,70]}]
