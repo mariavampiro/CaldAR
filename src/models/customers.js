@@ -4,10 +4,13 @@ module.exports = (mongoose) =>
     mongoose.Schema(
       {
         id: Number,
-        customerType: String,
+        businessName: String,
+        contactName: String,
         email: String,
-        buildingsId: [],
+        phone: String,
         fiscalAddress: String,
+        type: String,
+        buildings: [Number],
       },
       {timestamps: true},
     ),
