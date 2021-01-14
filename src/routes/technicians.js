@@ -1,12 +1,13 @@
 const express = require('express');
 const techniciansController = require('../controllers/technicians');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 const router = express.Router();
 
-router.get('/', techniciansController.findAll);
-router.post('/', techniciansController.create);
-router.get('/:id', techniciansController.findById);
-router.put('/:id', techniciansController.editById);
-router.delete('/:id', techniciansController.deleteById);
+router.get('/', authMiddleware,  techniciansController.findAll);
+router.post('/', authMiddleware,  techniciansController.create);
+router.get('/:id', authMiddleware,  techniciansController.findById);
+router.put('/:id', authMiddleware,  techniciansController.editById);
+router.delete('/:id', authMiddleware,  techniciansController.deleteById);
 
 module.exports = router;

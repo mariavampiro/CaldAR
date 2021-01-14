@@ -1,16 +1,17 @@
 const express = require('express');
 const buildingsController = require('../controllers/buildings');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 const router = express.Router();
 
-router.get('/', buildingsController.findAll);
+router.get('/', authMiddleware,  buildingsController.findAll);
 
-router.get('/:id', buildingsController.findOne);
+router.get('/:id', authMiddleware,  buildingsController.findOne);
 
-router.post('/', buildingsController.create);
+router.post('/', authMiddleware,  buildingsController.create);
 
-router.put('/:id', buildingsController.update);
+router.put('/:id', authMiddleware,  buildingsController.update);
 
-router.delete('/:id', buildingsController.delete);
+router.delete('/:id', authMiddleware,  buildingsController.delete);
 
 module.exports = router;
