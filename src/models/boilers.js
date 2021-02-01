@@ -4,7 +4,7 @@ module.exports = (mongoose) =>
     mongoose.Schema(
       {
         id: Number,
-        typeId: Number,
+        typeId: String,
         status: String,
         maintaince_rate: String,
         hour_maintaince_cost: String,
