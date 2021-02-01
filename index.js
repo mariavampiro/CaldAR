@@ -12,7 +12,14 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(express.static('public'));
 app.use(routes);
+app.use((req, res) => {
+  res.writeHead(301, {
+    Location: '/',
+  });
+  res.end();
+});
 
 db.mongoose
   .connect(db.url, {
