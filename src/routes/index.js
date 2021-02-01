@@ -8,11 +8,11 @@ const boilersTypesRoutes = require('./boilers-types');
 
 const router = express.Router();
 
-router.use('/appointments', appointmentsRoutes);
-router.use('/boilers', boilersRoutes);
-router.use('/buildings', buildingsRoutes);
-router.use('/customers', customersRoutes);
-router.use('/technicians', techniciansRoutes);
-router.use('/boilersTypes', boilersTypesRoutes);
+router.use('/api/appointments', appointmentsRoutes);
+router.use('/api/boilers', boilersRoutes);
+router.use('/api/buildings', buildingsRoutes);
+router.use('/api/customers', customersRoutes);
+router.use('/api/technicians', techniciansRoutes);
+router.use('/api/boilersTypes', boilersTypesRoutes);
 
 module.exports = router;
